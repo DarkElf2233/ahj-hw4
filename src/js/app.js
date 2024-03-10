@@ -23,7 +23,7 @@ btn.addEventListener('click', () => {
   }
 });
 
-input.addEventListener('change', () => {
+input.addEventListener('input', () => {
   const cardType = getCardType(input.value);
   if (cardType !== 'Unknown') {
     for (const card of cards) {
@@ -33,9 +33,7 @@ input.addEventListener('change', () => {
         card.classList.add('grey-background');
       }
     }
-    console.log(cardType);
     const currentCard = document.querySelector(`#card-${cardType}`);
-    console.log(currentCard);
     currentCard.classList.remove('grey-background');
   } else {
     for (const card of cards) {
